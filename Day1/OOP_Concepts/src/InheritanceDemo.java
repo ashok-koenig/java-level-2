@@ -5,7 +5,7 @@ class Person{
         this.name = name;
         this.age = age;
     }
-    void display(){
+    protected void display(){
         System.out.println("Name: "+ name);
         System.out.println("Age: "+ age);
     }
@@ -17,8 +17,8 @@ class Manager extends Person{
         super(name, age);
         this.dept = dept;
     }
-    // Overriding
-    void display(){
+    // Method Overriding
+    public void display(){
         super.display();
 //        System.out.println("Name: "+ name);
 //        System.out.println("Age: "+ age);
@@ -28,6 +28,8 @@ class Manager extends Person{
 
 public class InheritanceDemo {
     public static void main(String[] args) {
+        Person john = new Person("John", 22);
+        john.display();
         Manager obj = new Manager("Ram", 25, "IT");
         obj.display();
     }
